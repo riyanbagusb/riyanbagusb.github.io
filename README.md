@@ -6,7 +6,7 @@ I am a fresh graduate who is passionate about web development and just starting 
 
 <samp>
 
-- 🔭 I’m currently a job seeker
+- 🔭 I currently work as IT enterprise security in a finance company
 
 - 📝 Programming language and framework that i use:
 	- PHP
