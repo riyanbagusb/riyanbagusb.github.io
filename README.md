@@ -20,7 +20,6 @@ I am a fresh graduate who is passionate about web development and just starting 
 * 📧 Contact Me:
 	* [LinkedIn](https://www.linkedin.com/in/bagus-budhi-riyanto)
 	* [Email](mailto:riyanbagusb@gmail.com)
-	* [Twitter](https://twitter.com/riyan_bagusb)
 	* [Instagram](https://instagram.com/riyan_bagusb)
 
 * 📃 View My [Project/Portfolio](https://github.com/riyanbagusb/my-portfolio)
@@ -31,6 +30,8 @@ I am a fresh graduate who is passionate about web development and just starting 
 **riyanbagusb/riyanbagusb** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
+
+* [Twitter](https://twitter.com/riyan_bagusb)
 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
