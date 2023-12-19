@@ -1,0 +1,23 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero {
+  background: #09f;
+  color: #fff;
+}
+
+.fnb {
+  font-size: 4rem;
+}
+
+.sacremento {
+  font-family: "Sacramento", sans-serif;
+}
+
+.inconsolata {
+  font-family: "Inconsolata", sans-serif;
+}
+
+.wave > svg {
+}
