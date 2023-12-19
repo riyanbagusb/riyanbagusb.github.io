@@ -1,23 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Kaushan+Script&family=Lora:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", serif;
 }
 
 .hero {
-  background: #09f;
-  color: #fff;
+  background: #b0daff;
+  /* color: #fff; */
 }
 
-.fnb {
+.text-justify {
+  text-align: justify;
+}
+
+.font-size-4 {
   font-size: 4rem;
 }
 
-.sacremento {
-  font-family: "Sacramento", sans-serif;
+.font-size-3 {
+  font-size: 3rem;
 }
 
-.inconsolata {
-  font-family: "Inconsolata", sans-serif;
+.wedding-font {
+  font-family: "Kaushan Script", cursive;
 }
 
-.wave > svg {
+.sans-font {
+  font-family: "Montserrat", sans-serif;
+}
+
+.serif-font {
+  font-family: "Lora", serif;
+}
+
+.mono-font {
+  font-family: "Inconsolata", monospace;
 }

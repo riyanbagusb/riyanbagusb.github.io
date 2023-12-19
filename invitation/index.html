@@ -11,18 +11,6 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sacramento:wght@100;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@100;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
     />
@@ -34,9 +22,10 @@
       class="hero w-100 h-100 vh-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center"
     >
       <main>
-        <h1 class="sacremento mb-5 fnb">Fitri & Bagus</h1>
-        <h6 class="mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</h6>
-        <h5 class="fw-bold mb-3">Nama Undangan</h5>
+        <div class="mb-3">Undangan Pernikahan</div>
+        <h1 class="wedding-font mb-5 font-size-3">Fitri & Bagus</h1>
+        <div class="mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+        <div class="fw-bold mb-3">Nama Undangan</div>
         <div class="d-block">
           <span class="small fw-light"
             >Tanpa mengurangi rasa hormat, kami bermaksud mengundang Anda untuk
@@ -46,29 +35,32 @@
         <div class="d-block">
           <a
             href="#home"
-            class="btn btn-outline-light mt-3 mb-2"
+            class="btn btn-dark mt-3 mb-2"
             tabindex="-1"
             role="button"
             ><i class="bi bi-envelope-paper-heart me-2"></i>Buka Undangan</a
           >
         </div>
-        <span class="small fw-lighter"
+        <span class="small fw-lighter fst-italic"
           >*mohon maaf apabila terdapat kesalahan penulisan nama atau
           gelar</span
         >
       </main>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#0099ff"
-        fill-opacity="1"
-        d="M0,224L80,240C160,256,320,288,480,272C640,256,800,192,960,181.3C1120,171,1280,213,1360,234.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-      ></path>
-    </svg>
+
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#b0daff"
+          fill-opacity="1"
+          d="M0,224L80,240C160,256,320,288,480,272C640,256,800,192,960,181.3C1120,171,1280,213,1360,234.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
 
     <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
       <div class="container-fluid">
-        <a class="navbar-brand sacremento" href="#hero">Fitri & Bagus</a>
+        <a class="navbar-brand wedding-font" href="#hero">Fitri & Bagus</a>
         <button
           class="navbar-toggler border-0"
           type="button"
@@ -81,7 +73,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 h6 inconsolata">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 h6">
             <li class="nav-item">
               <a class="nav-link" href="#home">Home</a>
             </li>
@@ -104,19 +96,88 @@
         </div>
       </div>
     </nav>
+
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasFnB"
+      aria-labelledby="offcanvasFnBLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title wedding-font" id="offcanvasFnBLabel">
+          Wedding Gift
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body text-center">
+        <div class="bg-dark text-white border border-2 rounded-4 p-3 my-2">
+          <div class="sans-font fw-bolder h4">BCA</div>
+          <div class="fw-bold">2740415266</div>
+          <div class="small sans-font">a.n Fitri Nurulafiah</div>
+          <button
+            type="button"
+            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+          >
+            <i class="bi bi-copy me-2"></i>Salin No. Rekening
+          </button>
+        </div>
+        <div class="bg-dark text-white border border-2 rounded-4 p-3 my-2">
+          <div class="sans-font fw-bolder h4">Mandiri</div>
+          <div class="fw-bold">1670001532562</div>
+          <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
+          <button
+            type="button"
+            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+          >
+            <i class="bi bi-copy me-2"></i>Salin No. Rekening
+          </button>
+        </div>
+        <div class="bg-dark text-white border border-2 rounded-4 p-3 my-2">
+          <div class="sans-font fw-bolder h4 mb-0">E-Wallet</div>
+          <div class="sans-font small mb-2">(Gopay, Dana, OVO, LinkAja)</div>
+          <div class="fw-bold">0857 1905 1405</div>
+          <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
+          <button
+            type="button"
+            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+          >
+            <i class="bi bi-copy me-2"></i>Salin No. E-Wallet
+          </button>
+        </div>
+        <div class="bg-dark text-white border border-2 rounded-4 p-3 my-2">
+          <div class="sans-font fw-bolder h4 mb-0">Gift</div>
+          <div class="small sans-font">
+            Pangkalan Jati IV No.14 RT 011 RW 005, Kel. Cipinang Melayu, Kec.
+            Makasar, Jakarta Timur 13560
+          </div>
+          <button
+            type="button"
+            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+          >
+            <i class="bi bi-pin-map-fill me-2"></i>Lihat Lokasi
+          </button>
+        </div>
+      </div>
+    </div>
+
     <section
       id="home"
       class="vh-100 d-flex justify-content-center align-items-center"
     >
       <div class="text-center">
         <div>The Wedding of</div>
-        <div class="sacremento fnb">
+        <div class="wedding-font font-size-3">
           <div>Fitri</div>
           <div>&</div>
           <div>Bagus</div>
         </div>
-        <div>Sabtu</div>
-        <div>24 | 08 | 2024</div>
+        <div class="h5 mt-4">Sabtu</div>
+        <div class="wedding-font">24 | 08 | 2024</div>
       </div>
     </section>
 
@@ -125,100 +186,113 @@
       class="vh-100 bg-body-secondary d-flex justify-content-center align-items-center"
     >
       <div class="text-center">
-        <div class="mb-3 fw-bold">Assalamu'alaikum Wr. Wb.</div>
-        <div class="mb-5 inconsolata">
+        <div class="mb-3 fw-bold wedding-font h5">Assalamu'alaikum Wr. Wb.</div>
+        <div class="mb-5">
           Dengan rahmat dan ridho Allah SWT, insyaAllah kami akan
           menyelenggarakan acara pernikahan:
         </div>
         <div class="mb-3">The Wedding of</div>
         <div>
-          <div class="sacremento h1 fw-bold">Fitri Nurulafiah, S.E</div>
-          <div class="inconsolata">Putri dari Bapak Didin & Ibu Wati (alm)</div>
-          <div class="sacremento h1 my-3">------ & ------</div>
-          <div class="sacremento h1 fw-bold">Bagus Budhi Riyanto, S.Kom</div>
-          <div class="inconsolata">Putra dari Bapak Rudi & Ibu Sri</div>
+          <div class="wedding-font h1 fw-bold">Fitri Nurulafiah, S.E</div>
+          <div class="">
+            Putri dari Bapak Didin Komarudin & Ibu Yati Rustiawati (alm)
+          </div>
+          <div class="wedding-font h1 my-3">&</div>
+          <div class="wedding-font h1 fw-bold">Bagus Budhi Riyanto, S.Kom</div>
+          <div class="">Putra dari Bapak Rudi Hartono & Ibu Sri Widayati</div>
         </div>
         <div class="mt-3">
-          <div class="inconsolata">Sabtu</div>
-          <div class="sacremento">24 | 08 | 2024</div>
+          <div class="">Sabtu</div>
+          <div class="wedding-font">24 | 08 | 2024</div>
         </div>
       </div>
     </section>
+
     <section
       id="story"
-      class="vh-100 d-flex justify-content-center align-items-center"
+      class="d-flex justify-content-center align-items-center py-4"
     >
       <div class="text-center">
-        <div>Acara Kami</div>
-        <div>Akad Nikah</div>
-        <div>
-          <div>Sabtu, 24 Agustus 2024</div>
-          <div>Pukul 09.00 WIB</div>
-          <div>Ponyo Sumedang</div>
-          <div>Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang</div>
-          <div class="d-block">
-            <a
-              href="#home"
-              class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
-              tabindex="-1"
-              role="button"
-              ><i class="bi bi-calendar2-heart-fill me-2"></i>Ingatkan Saya</a
-            >
+        <div class="wedding-font h1 mb-0">Waktu & Tempat</div>
+        <div class="wedding-font h3">Pernikahan</div>
+        <div class="shadow px-3 py-2 mt-4 mx-3 rounded-4">
+          <div class="wedding-font h4">Akad Nikah</div>
+          <div>
+            <div>Sabtu, 24 Agustus 2024</div>
+            <div><i class="bi bi-clock me-1"></i> 09.00 WIB</div>
+            <div>Ponyo Sumedang</div>
+            <div>
+              Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang
+            </div>
+            <div class="d-block">
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
+                tabindex="-1"
+                role="button"
+                ><i class="bi bi-calendar2-heart-fill me-2"></i>Ingatkan Saya</a
+              >
+            </div>
           </div>
         </div>
-        <div>Resepsi</div>
-        <div>
-          <div>Sabtu, 24 Agustus 2024</div>
-          <div>Pukul 11.00 WIB</div>
-          <div>Ponyo Sumedang</div>
-          <div>Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang</div>
-          <div class="d-block">
-            <a
-              href="#home"
-              class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
-              tabindex="-1"
-              role="button"
-              ><i class="bi bi-geo-fill me-2"></i>Lihat Lokasi</a
-            >
+        <div class="shadow px-3 py-2 mt-4 mx-3 rounded-4">
+          <div class="wedding-font h4">Resepsi</div>
+          <div>
+            <div>Sabtu, 24 Agustus 2024</div>
+            <div>Pukul 11.00 WIB</div>
+            <div>Ponyo Sumedang</div>
+            <div>
+              Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang
+            </div>
+            <div class="d-block">
+              <a
+                href="#home"
+                class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
+                tabindex="-1"
+                role="button"
+                ><i class="bi bi-geo-fill me-2"></i>Lihat Lokasi</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="gallery" class="vh-100 bg-body-tertiary"></section>
-    <section id="rsvp" class="vh-100"></section>
-    <section
-      id="gift"
-      class="d-flex justify-content-center align-items-center bg-dark"
-    >
-      <div class="text-center m-3 p-3 shadow rounded-5 bg-white">
-        <div class="sacremento h1">Wedding Gift</div>
-        <div class="inconsolata mt-3">
-          Mungkin karena jarak, waktu dan keadaan yang menghalangi untuk ikut
-          hadi dalam acara pernikahan kami, kami sediakan fitur berikut:
+
+    <section id="gallery" class="vh-100 bg-body-secondary"></section>
+    <section id="rsvp" class="vh-100 bg-dark"></section>
+
+    <section id="gift" class="d-flex justify-content-center align-items-center">
+      <div class="text-center m-3 p-3 shadow rounded-5 bg-dark text-white">
+        <div class="wedding-font h1">Wedding Gift</div>
+        <div class="mt-3">
+          Mungkin karena jarak, waktu dan keadaan yang menghalangi anda untuk
+          turut hadir dalam acara pernikahan kami, kami sediakan fitur berikut:
         </div>
         <div class="d-block">
           <a
-            href="#gift"
-            class="btn btn-outline-dark px-4 py-2 mt-3 mb-2 rounded-5"
-            tabindex="-1"
+            class="btn btn-outline-light px-4 py-2 mt-3 mb-2 rounded-5"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasFnB"
             role="button"
+            aria-controls="offcanvasFnB"
             ><i class="bi bi-gift-fill me-2"></i>Wedding Gift</a
           >
         </div>
       </div>
     </section>
-    <section
-      id="gift"
-      class="bg-dark d-flex justify-content-center align-items-center"
-    >
-      <div class="text-center text-white my-3">
-        <div class="inconsolata mb-3">
+
+    <section id="gift" class="d-flex justify-content-center align-items-center">
+      <div class="text-center my-3">
+        <div class="mb-3">
           Atas kehadiran dan do'a restu dari Bapak/Ibu/Saudara/i sekalian, kami
           mengucapkan terima kasih.
         </div>
-        <div class="mb-4 fw-bold">Wassalamu'alaikum Wr. Wb.</div>
-        <div class="inconsolata mb-1">Kami yang berbahagia</div>
-        <div class="sacremento fnb">Fitri & Bagus</div>
+        <div class="mb-4 fw-bold wedding-font h5">
+          Wassalamu'alaikum Wr. Wb.
+        </div>
+        <div class="mb-1">Kami yang berbahagia</div>
+        <div class="wedding-font font-size-3 mb-2">Fitri & Bagus</div>
+        <div class="fw-bold">Beserta Keluarga Besar</div>
       </div>
     </section>
 
