@@ -9,7 +9,7 @@ body {
   overflow: hidden;
   opacity: 0.3;
   background: url(/invitation/bg.jpg) no-repeat center center;
-  background-size: cover;
+  background-size: contain;
 }
 
 .fnb {
