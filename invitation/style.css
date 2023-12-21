@@ -8,12 +8,17 @@ body {
   height: 100%;
   overflow: hidden;
   opacity: 0.3;
-  background: url(/invitation/bg.jpg) no-repeat center center;
+  background: url(/invitation/assets/bg.jpg) no-repeat center center;
   background-size: contain;
 }
 
-.fnb {
+.bg-fnb {
   background: #b0daff;
+}
+
+.text-fnb {
+  /* color: #3f3244; */
+  color: #1f305e;
 }
 
 .hero {
