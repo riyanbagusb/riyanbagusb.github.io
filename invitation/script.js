@@ -103,8 +103,7 @@ function hitungMundur(tanggalTarget) {
       window.onscroll = function () { }
       rootElement.style.scrollBehavior = 'smooth';
       document.getElementById('navigation').style.display = 'inline-block';
-
-      playAudio()
+      playAudio();
     }
 
     disableScroll();
