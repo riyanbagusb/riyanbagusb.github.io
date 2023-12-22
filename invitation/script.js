@@ -76,6 +76,7 @@ function hitungMundur(tanggalTarget) {
     function playAudio() {
       audio.play();
       document.getElementById('playButton').style.display = 'none';
+      document.getElementById('pauseButton').style.display = 'inline-block';
 
     }
 
