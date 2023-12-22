@@ -21,11 +21,6 @@ body {
   color: #1f305e;
 }
 
-.hero {
-  /* background: linear-gradient(#b0daff, #006bc9); */
-  background: #a9d0f6;
-}
-
 .text-justify {
   text-align: justify;
 }

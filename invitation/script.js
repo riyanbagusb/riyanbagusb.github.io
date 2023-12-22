@@ -73,12 +73,10 @@ function hitungMundur(tanggalTarget) {
 
   const audio = document.getElementById('audioPlayer');
 
-  document.getElementById('playButton').style.display = 'none';
-
     function playAudio() {
       audio.play();
       document.getElementById('playButton').style.display = 'none';
-      document.getElementById('pauseButton').style.display = 'inline-block';
+
     }
 
     function pauseAudio() {
@@ -86,3 +84,26 @@ function hitungMundur(tanggalTarget) {
       document.getElementById('pauseButton').style.display = 'none';
       document.getElementById('playButton').style.display = 'inline-block';
     }
+
+    const rootElement = document.querySelector(":root");
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+      document.getElementById('navigation').style.display = 'inline-block';
+
+      playAudio()
+    }
+
+    disableScroll();
