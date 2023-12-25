@@ -112,28 +112,17 @@ function hitungMundur(tanggalTarget) {
     function copyText(id) {
       const textToCopy = document.getElementById(id).innerText;
       
-      let textArea = document.createElement("textarea");
-      textArea.value = textToCopy;
-      document.body.appendChild(textArea);
-      
-      if (navigator.userAgent.match(/ipad|iphone|mac os|android/i)) {
-        const range = document.createRange();
-        range.selectNodeContents(textArea);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        textArea.setSelectionRange(0, 999999);
-      } else {
-        textArea.select();
-      }
-
-      try {
-        const successful = document.execCommand('copy');
-        const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
-        alert(message);
-      } catch (err) {
-        console.error('Gagal menyalin teks ke clipboard:', err);
-      }
-
-      document.body.removeChild(textArea);
+      navigator.permissions.query({ name: 'clipboard-write' }).then(result => {
+        if (result.state == 'granted' || result.state == 'prompt') {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
+          }).catch(err => {
+            alert('Gagal menyalin teks ke clipboard.');
+          });
+        } else {
+          alert('Izin akses ke clipboard tidak diberikan.');
+        }
+      }).catch(err => {
+        alert('Gagal meminta izin akses ke clipboard.');
+      });
     }

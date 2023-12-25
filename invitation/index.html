@@ -306,23 +306,28 @@
         </div>
         <div class="shadow-sm rounded-4 p-3 my-2">
           <div class="sans-font fw-bolder h4">Mandiri</div>
-          <div class="fw-bold">1670001532562</div>
+          <div class="fw-bold" id="rekMandiri">1670001532562</div>
           <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
           <button
             type="button"
             class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            onclick="copyText('rekMandiri')"
           >
             <i class="bi bi-copy me-2"></i>Salin No. Rekening
           </button>
         </div>
         <div class="shadow-sm rounded-4 p-3 my-2">
           <div class="sans-font fw-bolder h4 mb-0">E-Wallet</div>
-          <div class="sans-font small mb-2">(Gopay, Dana, OVO, LinkAja)</div>
+          <div class="sans-font small mb-2">
+            (Gopay, Dana, OVO, ShopeePay, LinkAja)
+          </div>
           <div class="fw-bold">0857 1905 1405</div>
+          <div class="fw-bold d-none" id="ewallet">085719051405</div>
           <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
           <button
             type="button"
             class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            onclick="copyText('ewallet')"
           >
             <i class="bi bi-copy me-2"></i>Salin E-Wallet
           </button>
@@ -339,16 +344,25 @@
         </div> -->
         <div class="shadow-sm rounded-4 p-3 my-2">
           <div class="sans-font fw-bolder h4 mb-0">Gift</div>
-          <div class="small sans-font">
+          <div class="small sans-font" id="alamatGift">
             Pangkalan Jati IV No.14 RT 011 RW 005, Kel. Cipinang Melayu, Kec.
             Makasar, Jakarta Timur 13560
           </div>
           <button
             type="button"
             class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            onclick="copyText('alamatGift')"
+          >
+            <i class="bi bi-copy me-2"></i>Salin Alamat
+          </button>
+          <a
+            href="https://maps.app.goo.gl/pHryxKfdSBu3ir5k9"
+            target="_blank"
+            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            role="button"
           >
             <i class="bi bi-pin-map-fill me-2"></i>Lihat Lokasi
-          </button>
+          </a>
         </div>
       </div>
     </div>
