@@ -27,117 +27,157 @@ function hitungMundur(tanggalTarget) {
       menit,
       detik
     };
-  }
+}
 
-  function perbaruiHitungMundur(tanggalTarget) {
-    const waktu = hitungMundur(tanggalTarget);
+function perbaruiHitungMundur(tanggalTarget) {
+  const waktu = hitungMundur(tanggalTarget);
 
-    document.getElementById('hari').innerText = waktu.hari;
-    document.getElementById('jam').innerText = waktu.jam;
-    document.getElementById('menit').innerText = waktu.menit;
-    document.getElementById('detik').innerText = waktu.detik;
-  }
+  document.getElementById('hari').innerText = waktu.hari;
+  document.getElementById('jam').innerText = waktu.jam;
+  document.getElementById('menit').innerText = waktu.menit;
+  document.getElementById('detik').innerText = waktu.detik;
+}
 
-  // Contoh penggunaan:
-  const tanggalTarget = '2024-04-27T00:00:00'; // Atur tanggal target di sini (format: 'YYYY-MM-DDTHH:mm:ss')
+// Contoh penggunaan:
+const tanggalTarget = '2024-04-27T09:00:00'; // Atur tanggal target di sini (format: 'YYYY-MM-DDTHH:mm:ss')
 
-  // Memperbarui setiap detik
-  setInterval(function() {
-    perbaruiHitungMundur(tanggalTarget);
-  }, 1000);
-
-  // Memperbarui untuk pertama kali saat halaman dimuat
+// Memperbarui setiap detik
+setInterval(function() {
   perbaruiHitungMundur(tanggalTarget);
+}, 1000);
 
-  // SCROLL TO TOP
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Efek smooth scrolling
-    });
+// Memperbarui untuk pertama kali saat halaman dimuat
+perbaruiHitungMundur(tanggalTarget);
+
+// SCROLL TO TOP
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Efek smooth scrolling
+  });
+}
+
+// PLAY AUDIO
+const audio = document.getElementById('audioPlayer');
+const playButton = document.getElementById('playButton');
+const pauseButton = document.getElementById('pauseButton');
+
+function playAudio() {
+  audio.play();
+  playButton.style.display = 'none';
+  pauseButton.style.display = 'inline-block';
+
+}
+
+function pauseAudio() {
+  audio.pause();
+  playButton.style.display = 'inline-block';
+  pauseButton.style.display = 'none';
+}
+
+// DISABLE SCROLL
+const rootElement = document.querySelector(":root");
+
+function disableScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  window.onscroll = function () {
+    window.scrollTo(scrollTop, scrollLeft);
   }
+  rootElement.style.scrollBehavior = 'auto';
+}
 
-  // PLAY AUDIO
-  const audio = document.getElementById('audioPlayer');
-  const playButton = document.getElementById('playButton');
-  const pauseButton = document.getElementById('pauseButton');
+function enableScroll() {
+  window.onscroll = function () { }
+  rootElement.style.scrollBehavior = 'smooth';
+  document.getElementById('navigation').style.display = 'inline-block';
+  document.getElementById('backToTopBtn').style.display = 'inline-block';
+  playAudio();
+}
 
-    function playAudio() {
-      audio.play();
-      playButton.style.display = 'none';
-      pauseButton.style.display = 'inline-block';
+disableScroll();
 
+//URL PARAMETER
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get('to');
+
+const namaUndangan = document.getElementById('namaUndangan');
+const namaReservation = document.getElementById('nama');
+const namaPengirim = document.getElementById('namaPengirim');
+
+namaUndangan.innerText = nama ?? "Undangan";
+namaReservation.value = nama ?? "";
+namaPengirim.value = nama ?? "";
+
+// COPY TO CLIPBOARD
+function copyText(id) {
+  const textToCopy = document.getElementById(id).innerText;
+  
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
+    }).catch(err => {
+      console.error('Gagal menyalin ke clipboard:', err);
+      alert('Gagal menyalin teks ke clipboard.');
+    });
+  } else {
+    const textField = document.createElement('textarea');
+    textField.innerText = textToCopy;
+    textField.style.position = 'fixed';
+    textField.style.opacity = 0;
+    document.body.appendChild(textField);
+
+    textField.focus();
+    textField.setSelectionRange(0, textField.value.length);
+
+    try {
+      const successful = document.execCommand('copy');
+      const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
+      alert(message);
+    } catch (err) {
+      console.error('Gagal menyalin teks ke clipboard:', err);
+      alert('Gagal menyalin teks ke clipboard.');
     }
 
-    function pauseAudio() {
-      audio.pause();
-      playButton.style.display = 'inline-block';
-      pauseButton.style.display = 'none';
-    }
+    document.body.removeChild(textField);
+  }
+}
 
-    // DISABLE SCROLL
-    const rootElement = document.querySelector(":root");
+// DISABLE FORM RESPONSE
+window.addEventListener("load", function() {
+  const form = document.getElementById('formReservasi');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Success!");
+    })
+  });
+});
 
-    function disableScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+// Data
 
-      window.onscroll = function () {
-        window.scrollTo(scrollTop, scrollLeft);
-      }
-      rootElement.style.scrollBehavior = 'auto';
-    }
+// const database = firebase.database();
 
-    function enableScroll() {
-      window.onscroll = function () { }
-      rootElement.style.scrollBehavior = 'smooth';
-      document.getElementById('navigation').style.display = 'inline-block';
-      document.getElementById('backToTopBtn').style.display = 'inline-block';
-      playAudio();
-    }
+function addData() {
+  const newData = {
+    nama: "Contoh Nama",
+    pesan: "Contoh Pesan"
+  };
 
-    disableScroll();
-
-    //URL PARAMETER
-    const urlParams = new URLSearchParams(window.location.search);
-    const nama = urlParams.get('to');
-    
-    const namaUndangan = document.getElementById('namaUndangan');
-    const namaReservation = document.getElementById('nama');
-
-    namaUndangan.innerText = nama ?? "Undangan";
-    namaReservation.value = nama ?? "";
-
-    // COPY TO CLIPBOARD
-    function copyText(id) {
-      const textToCopy = document.getElementById(id).innerText;
-      
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
-        }).catch(err => {
-          console.error('Gagal menyalin ke clipboard:', err);
-          alert('Gagal menyalin teks ke clipboard.');
-        });
-      } else {
-        const textField = document.createElement('textarea');
-        textField.innerText = textToCopy;
-        textField.style.position = 'fixed';
-        textField.style.opacity = 0;
-        document.body.appendChild(textField);
-
-        textField.focus();
-        textField.setSelectionRange(0, textField.value.length);
-
-        try {
-          const successful = document.execCommand('copy');
-          const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
-          alert(message);
-        } catch (err) {
-          console.error('Gagal menyalin teks ke clipboard:', err);
-          alert('Gagal menyalin teks ke clipboard.');
-        }
-
-        document.body.removeChild(textField);
-      }
-    }
+  database.ref('/data').push(newData)
+    .then(() => {
+      console.log('Data berhasil ditambahkan ke Firebase');
+      alert('Data berhasil ditambahkan ke Firebase');
+    })
+    .catch(error => {
+      console.error('Gagal menambahkan data:', error);
+      alert('Gagal menambahkan data.');
+    });
+}
