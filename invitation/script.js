@@ -39,7 +39,7 @@ function hitungMundur(tanggalTarget) {
   }
 
   // Contoh penggunaan:
-  const tanggalTarget = '2024-04-20T00:00:00'; // Atur tanggal target di sini (format: 'YYYY-MM-DDTHH:mm:ss')
+  const tanggalTarget = '2024-04-27T00:00:00'; // Atur tanggal target di sini (format: 'YYYY-MM-DDTHH:mm:ss')
 
   // Memperbarui setiap detik
   setInterval(function() {
