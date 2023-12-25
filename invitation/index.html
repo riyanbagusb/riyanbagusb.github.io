@@ -18,27 +18,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Kaushan+Script&family=Lora:wght@400;500;600;700&family=Jost:wght@200;300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Great+Vibes&family=Lora:wght@400;500;600;700&family=Jost:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- <audio id="audioPlayer" autoplay loop>
+    <audio id="audioPlayer" autoplay loop>
       <source src="/invitation/Bruno Major - Home.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
-    </audio> -->
+    </audio>
 
     <section id="invitation">
       <div
-        class="vh-100 text-center d-flex justify-content-center align-items-center bg-fnb"
+        class="vh-100 text-center d-flex flex-column justify-content-center align-items-center bg-fnb"
       >
-        <div class="container">
-          <div class="mb-3">Undangan Pernikahan</div>
+        <div class="my-auto">
           <h1 class="wedding-font font-size-3 mb-3">Fitri & Bagus</h1>
-          <div class="mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</div>
-          <div class="fw-bold h4 mb-3">Nama Undangan & Partner</div>
+          <div class="mb-2">Yth. Bapak/Ibu/Saudara/i</div>
+          <div id="namaUndangan" class="fw-bold h3 mb-3">
+            Nama Undangan & Partner
+          </div>
           <div class="small fw-light">
             Tanpa mengurangi rasa hormat, kami bermaksud mengundang Anda untuk
             menghadiri acara pernikahan kami.
@@ -52,10 +53,11 @@
               ><i class="bi bi-envelope-paper-heart me-2"></i>Buka Undangan</a
             >
           </div>
-          <span class="small fw-lighter fst-italic"
-            >*mohon maaf apabila terdapat kesalahan penulisan nama atau
-            gelar</span
-          >
+        </div>
+        <div class="mb-3">
+          <div class="small fw-lighter fst-italic">
+            *mohon maaf apabila terdapat kesalahan penulisan nama atau gelar
+          </div>
         </div>
       </div>
     </section>
@@ -269,7 +271,7 @@
             <i class="bi bi-copy me-2"></i>Salin E-Wallet
           </button>
         </div>
-        <div class="bg-fnb shadow-sm rounded-4 p-3 my-2">
+        <!-- <div class="bg-fnb shadow-sm rounded-4 p-3 my-2">
           <div class="sans-font fw-bolder h4 mb-0">QRIS</div>
           <div class="sans-font small">Seluruh Metode Pembayaran</div>
           <button
@@ -278,7 +280,7 @@
           >
             <i class="bi bi-qr-code-scan me-2"></i>Generate QRIS
           </button>
-        </div>
+        </div> -->
         <div class="bg-fnb shadow-sm rounded-4 p-3 my-2">
           <div class="sans-font fw-bolder h4 mb-0">Gift</div>
           <div class="small sans-font">
@@ -331,6 +333,7 @@
             class="bi bi-arrow-up-circle-fill"
             onclick="scrollToTop()"
             id="backToTopBtn"
+            style="display: none"
           ></i>
         </div>
         <nav

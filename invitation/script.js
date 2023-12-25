@@ -49,7 +49,7 @@ function hitungMundur(tanggalTarget) {
   // Memperbarui untuk pertama kali saat halaman dimuat
   perbaruiHitungMundur(tanggalTarget);
 
-
+  // SCROLL TO TOP
   function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -57,35 +57,25 @@ function hitungMundur(tanggalTarget) {
     });
   }
 
-  // Munculkan tombol saat scroll mencapai posisi tertentu
-  window.onscroll = function() {
-    tampilkanTombol();
-  };
-
-  function tampilkanTombol() {
-    const tombol = document.getElementById("backToTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      tombol.style.display = "block";
-    } else {
-      tombol.style.display = "none";
-    }
-  }
-
+  // PLAY AUDIO
   const audio = document.getElementById('audioPlayer');
+  const playButton = document.getElementById('playButton');
+  const pauseButton = document.getElementById('pauseButton');
 
     function playAudio() {
       audio.play();
-      document.getElementById('playButton').style.display = 'none';
-      document.getElementById('pauseButton').style.display = 'inline-block';
+      playButton.style.display = 'none';
+      pauseButton.style.display = 'inline-block';
 
     }
 
     function pauseAudio() {
       audio.pause();
-      document.getElementById('pauseButton').style.display = 'none';
-      document.getElementById('playButton').style.display = 'inline-block';
+      playButton.style.display = 'inline-block';
+      pauseButton.style.display = 'none';
     }
 
+    // DISABLE SCROLL
     const rootElement = document.querySelector(":root");
 
     function disableScroll() {
@@ -95,7 +85,6 @@ function hitungMundur(tanggalTarget) {
       window.onscroll = function () {
         window.scrollTo(scrollTop, scrollLeft);
       }
-
       rootElement.style.scrollBehavior = 'auto';
     }
 
@@ -103,7 +92,16 @@ function hitungMundur(tanggalTarget) {
       window.onscroll = function () { }
       rootElement.style.scrollBehavior = 'smooth';
       document.getElementById('navigation').style.display = 'inline-block';
+      document.getElementById('backToTopBtn').style.display = 'inline-block';
       playAudio();
     }
 
     disableScroll();
+
+    //URL PARAMETER
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('to');
+    
+    const namaUndangan = document.getElementById('namaUndangan');
+
+    namaUndangan.innerText = nama ?? "Undangan";
