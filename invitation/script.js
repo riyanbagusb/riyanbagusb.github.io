@@ -117,12 +117,14 @@ function hitungMundur(tanggalTarget) {
           navigator.clipboard.writeText(textToCopy).then(() => {
             alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
           }).catch(err => {
+            console.error('Gagal menyalin ke clipboard:', err);
             alert('Gagal menyalin teks ke clipboard.');
           });
         } else {
           alert('Izin akses ke clipboard tidak diberikan.');
         }
       }).catch(err => {
+        console.error('Gagal meminta izin akses ke clipboard:', err);
         alert('Gagal meminta izin akses ke clipboard.');
       });
     }
