@@ -112,19 +112,32 @@ function hitungMundur(tanggalTarget) {
     function copyText(id) {
       const textToCopy = document.getElementById(id).innerText;
       
-      navigator.permissions.query({ name: 'clipboard-write' }).then(result => {
-        if (result.state == 'granted' || result.state == 'prompt') {
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
-          }).catch(err => {
-            console.error('Gagal menyalin ke clipboard:', err);
-            alert('Gagal menyalin teks ke clipboard.');
-          });
-        } else {
-          alert('Izin akses ke clipboard tidak diberikan.');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
+        }).catch(err => {
+          console.error('Gagal menyalin ke clipboard:', err);
+          alert('Gagal menyalin teks ke clipboard.');
+        });
+      } else {
+        const textField = document.createElement('textarea');
+        textField.innerText = textToCopy;
+        textField.style.position = 'fixed';
+        textField.style.opacity = 0;
+        document.body.appendChild(textField);
+
+        textField.focus();
+        textField.setSelectionRange(0, textField.value.length);
+
+        try {
+          const successful = document.execCommand('copy');
+          const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
+          alert(message);
+        } catch (err) {
+          console.error('Gagal menyalin teks ke clipboard:', err);
+          alert('Gagal menyalin teks ke clipboard.');
         }
-      }).catch(err => {
-        console.error('Gagal meminta izin akses ke clipboard:', err);
-        alert('Gagal meminta izin akses ke clipboard.');
-      });
+
+        document.body.removeChild(textField);
+      }
     }
