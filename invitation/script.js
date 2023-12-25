@@ -79,8 +79,8 @@ function hitungMundur(tanggalTarget) {
     const rootElement = document.querySelector(":root");
 
     function disableScroll() {
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
       window.onscroll = function () {
         window.scrollTo(scrollTop, scrollLeft);
@@ -103,5 +103,37 @@ function hitungMundur(tanggalTarget) {
     const nama = urlParams.get('to');
     
     const namaUndangan = document.getElementById('namaUndangan');
+    const namaReservation = document.getElementById('nama');
 
     namaUndangan.innerText = nama ?? "Undangan";
+    namaReservation.value = nama ?? "";
+
+    // COPY TO CLIPBOARD
+    function copyText(id) {
+      const textToCopy = document.getElementById(id).innerText;
+      
+      let textArea = document.createElement("textarea");
+      textArea.value = textToCopy;
+      document.body.appendChild(textArea);
+      
+      if (navigator.userAgent.match(/ipad|iphone|mac os|android/i)) {
+        const range = document.createRange();
+        range.selectNodeContents(textArea);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+
+      try {
+        const successful = document.execCommand('copy');
+        const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
+        alert(message);
+      } catch (err) {
+        console.error('Gagal menyalin teks ke clipboard:', err);
+      }
+
+      document.body.removeChild(textArea);
+    }

@@ -17,7 +17,6 @@ body {
 }
 
 .text-fnb {
-  /* color: #3f3244; */
   color: #1f305e;
 }
 
@@ -31,6 +30,14 @@ body {
 
 .font-size-3 {
   font-size: 3rem;
+}
+
+.font-size-2 {
+  font-size: 2rem;
+}
+
+.font-size-1 {
+  font-size: 1rem;
 }
 
 .wedding-font {
@@ -47,4 +54,82 @@ body {
 
 .mono-font {
   font-family: "Inconsolata", monospace;
+}
+
+:root {
+  --white: #fff;
+}
+
+.bg-circles div {
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceTop {
+  0%,
+  100% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounceRight {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.bg-circles .circle-1 {
+  height: 120px;
+  width: 120px;
+  background-color: var(--white);
+  left: 5%;
+  top: 10%;
+  opacity: 0.3;
+  animation: zoomInOut 8s linear infinite;
+}
+
+.bg-circles .circle-2 {
+  height: 80px;
+  width: 80px;
+  background-color: var(--white);
+  left: 30%;
+  top: 50%;
+  opacity: 0.4;
+  animation: bounceTop 5s ease-in-out infinite;
+}
+
+.bg-circles .circle-3 {
+  height: 120px;
+  width: 120px;
+  background-color: var(--white);
+  top: 40%;
+  right: -60px;
+  opacity: 0.6;
+}
+
+.bg-circles .circle-4 {
+  height: 50px;
+  width: 50px;
+  background-color: var(--white);
+  top: 80%;
+  left: -30px;
+  opacity: 0.6;
+  animation: bounceRight 5s ease-in-out infinite;
 }
