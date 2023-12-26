@@ -116,9 +116,9 @@ function copyText(id) {
   
   if (navigator.clipboard?.writeText) {
     navigator.clipboard.writeText(textToCopy).then(() => {
-      alert('Teks berhasil disalin ke clipboard: ' + textToCopy);
+      alert('Teks berhasil disalin ke clipboard:\n' + textToCopy);
     }).catch(err => {
-      console.error('Gagal menyalin ke clipboard:', err);
+      console.error('Gagal menyalin ke clipboard:\n', err);
       alert('Gagal menyalin teks ke clipboard.');
     });
   } else {
@@ -133,10 +133,10 @@ function copyText(id) {
 
     try {
       const successful = document.execCommand('copy');
-      const message = successful ? 'Teks berhasil disalin ke clipboard: ' + textToCopy : 'Gagal menyalin teks ke clipboard.';
+      const message = successful ? 'Teks berhasil disalin ke clipboard:\n' + textToCopy : 'Gagal menyalin teks ke clipboard.';
       alert(message);
     } catch (err) {
-      console.error('Gagal menyalin teks ke clipboard:', err);
+      console.error('Gagal menyalin teks ke clipboard:\n', err);
       alert('Gagal menyalin teks ke clipboard.');
     }
 
@@ -156,12 +156,42 @@ window.addEventListener("load", function() {
       body: data,
     })
     .then(() => {
-      alert("Success!");
+      alert("Konfirmasi berhasil terkirim.");
     })
   });
 });
 
-// Data
+// FULLSCREEN WEBSITE
+const buttonFullscreen = document.getElementById('fullscreenButton');
+function toggleFullscreen() {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    // Masuk ke mode fullscreen
+    buttonFullscreen.classList.add('bi-fullscreen-exit');
+    buttonFullscreen.classList.remove('bi-arrows-fullscreen');
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    // Keluar dari mode fullscreen
+    buttonFullscreen.classList.add('bi-arrows-fullscreen');
+    buttonFullscreen.classList.remove('bi-fullscreen-exit');
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+}
 
 // const database = firebase.database();
 

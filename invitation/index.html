@@ -36,8 +36,9 @@
       style="max-width: 768px"
     >
       <div class="my-auto z-1">
+        <img src = "bird.svg" alt="Bird Vector Image" height="100px" class="mb-2"/>
         <div class="mb-2">Wedding Invitation</div>
-        <h1 class="wedding-font font-size-3 mb-3">
+        <h1 class="wedding-font font-size-3 mb-2">
           Fitri <span class="font-size-2">&</span> Bagus
         </h1>
         <div class="mb-2">Yth. Bapak/Ibu/Saudara/i</div>
@@ -83,17 +84,23 @@
       style="max-width: 768px"
     >
       <div class="mb-3 fw-bold wedding-font h5">Assalamu'alaikum Wr. Wb.</div>
-      <div class="mb-5">
+      <div class="mb-4">
         Dengan rahmat dan ridho Allah SWT, insyaAllah kami akan menyelenggarakan
         acara pernikahan:
       </div>
       <div class="mb-3">The Wedding of</div>
       <div>
+        <div class="img-box border rounded-circle mb-3">
+          <img src="FitriTP.png" class="w-100" alt="..." />
+        </div>
         <div class="wedding-font h1 fw-bold">Fitri Nurulafiah, S.E</div>
         <div class="">
           Putri dari Bapak Didin Komarudin & Ibu Yati Rustiawati (alm)
         </div>
         <div class="wedding-font h1 my-3">&</div>
+        <div class="img-box border rounded-circle mb-3">
+          <img src="BagusTP.png" class="w-100" alt="..." />
+        </div>
         <div class="wedding-font h1 fw-bold">Bagus Budhi Riyanto, S.Kom</div>
         <div class="">Putra dari Bapak Rudi Hartono & Ibu Sri Widayati</div>
       </div>
@@ -200,7 +207,7 @@
               <div class="col-sm-10">
                 <input
                   type="text"
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm rounded-pill"
                   id="nama"
                   name="Nama"
                 />
@@ -213,7 +220,7 @@
               <div class="col-sm-10">
                 <input
                   type="number"
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm rounded-pill"
                   id="jumlah"
                   min="1"
                   max="5"
@@ -228,7 +235,7 @@
               >
               <div class="col-sm-10">
                 <select
-                  class="form-select form-select-sm"
+                  class="form-select form-select-sm rounded-pill"
                   aria-label="Konfirmasi"
                   id="konfirmasi"
                   name="Konfirmasi"
@@ -292,7 +299,7 @@
               <div class="col-sm-10">
                 <input
                   type="text"
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm rounded-pill"
                   id="namaPengirim"
                   name="namaPengirim"
                 />
@@ -304,7 +311,7 @@
               >
               <div class="col-sm-10">
                 <textarea
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm rounded-4"
                   id="ucapan"
                   name="Ucapan"
                   rows="3"
@@ -315,7 +322,12 @@
               <i class="bi bi-postcard-heart-fill me-2"></i>Kirim Ucapan
             </button>
           </form>
-          <button onclick="addData()">POST Data</button>
+          <!-- <button
+            class="btn btn-sm btn-outline-dark rounded-5"
+            onclick="addData()"
+          >
+            POST Data
+          </button> -->
         </div>
       </div>
     </section>
@@ -327,7 +339,10 @@
       aria-labelledby="offcanvasFnBLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title wedding-font" id="offcanvasFnBLabel">
+        <h5
+          class="offcanvas-title align-self-center wedding-font"
+          id="offcanvasFnBLabel"
+        >
           Wedding Gift
         </h5>
         <button
@@ -414,7 +429,7 @@
     </div>
 
     <section
-      class="container d-flex justify-content-center align-items-center mt-3 mb-5 pb-5 border"
+      class="container d-flex justify-content-center align-items-center mt-3 mb-5 border"
       style="max-width: 768px"
     >
       <div class="my-3">
@@ -426,30 +441,40 @@
           Wassalamu'alaikum Wr. Wb.
         </div>
         <div class="mb-1">Kami yang berbahagia</div>
-        <div class="wedding-font font-size-3 mb-2">Fitri & Bagus</div>
+        <div class="wedding-font font-size-3">Fitri & Bagus</div>
         <div class="fw-bold">Beserta Keluarga Besar</div>
+        <div class="mt-4">Made with ❤️</div>
+        <div>© 2024 | Fitri & Bagus</div>
       </div>
     </section>
 
     <section>
+      <div class="fixed-top d-flex flex-column justify-content-center">
+        <div class="my-2 mx-3 h5 align-self-end">
+          <i
+            class="bi bi-arrows-fullscreen"
+            onclick="toggleFullscreen()"
+            id="fullscreenButton"
+          ></i>
+        </div>
       <div class="fixed-bottom d-flex flex-column justify-content-center">
-        <div class="mb-1 me-3 h1 text-fnb align-self-end">
+        <div class="mb-1 mx-3 h2 align-self-end">
           <i
             id="playButton"
-            class="bi bi-play-circle-fill"
+            class="bi bi-play-circle"
             onclick="playAudio()"
             style="display: none"
           ></i>
           <i
             id="pauseButton"
-            class="bi bi-pause-circle-fill"
+            class="bi bi-pause-circle"
             onclick="pauseAudio()"
             style="display: none"
           ></i>
         </div>
-        <div class="mb-3 me-3 h1 text-fnb align-self-end">
+        <div class="mb-3 mx-3 h2 align-self-end">
           <i
-            class="bi bi-arrow-up-circle-fill"
+            class="bi bi-arrow-up-circle"
             onclick="scrollToTop()"
             id="backToTopBtn"
             style="display: none"
@@ -500,29 +525,29 @@
       crossorigin="anonymous"
     ></script>
     <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
+      // // Import the functions you need from the SDKs you need
+      // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+      // // TODO: Add SDKs for Firebase products that you want to use
+      // // https://firebase.google.com/docs/web/setup#available-libraries
 
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyAxL0iT9ndbU0sP6c5VMa-WcgC3ZzMOxkQ",
-        authDomain: "fnb-wedding.firebaseapp.com",
-        databaseURL:
-          "https://fnb-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "fnb-wedding",
-        storageBucket: "fnb-wedding.appspot.com",
-        messagingSenderId: "785627773860",
-        appId: "1:785627773860:web:dd0e6648d92bf50ef85f31",
-        measurementId: "G-B169RECVPE",
-      };
+      // // Your web app's Firebase configuration
+      // // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      // const firebaseConfig = {
+      //   apiKey: "AIzaSyAxL0iT9ndbU0sP6c5VMa-WcgC3ZzMOxkQ",
+      //   authDomain: "fnb-wedding.firebaseapp.com",
+      //   databaseURL:
+      //     "https://fnb-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
+      //   projectId: "fnb-wedding",
+      //   storageBucket: "fnb-wedding.appspot.com",
+      //   messagingSenderId: "785627773860",
+      //   appId: "1:785627773860:web:dd0e6648d92bf50ef85f31",
+      //   measurementId: "G-B169RECVPE",
+      // };
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
+      // // Initialize Firebase
+      // const app = initializeApp(firebaseConfig);
+      // const analytics = getAnalytics(app);
     </script>
   </body>
 </html>

@@ -133,3 +133,11 @@ body {
   opacity: 0.6;
   animation: bounceRight 5s ease-in-out infinite;
 }
+
+.img-box {
+  max-width: 120px;
+  max-height: 120px;
+  /* background-color: #b0daff; */
+  margin: auto;
+  overflow: hidden;
+}
