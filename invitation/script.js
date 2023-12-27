@@ -193,6 +193,7 @@ function copyText(id) {
 window.addEventListener("load", function() {
   const formReservasi = document.getElementById('formReservasi');
   const sectionRsvp = document.getElementById('rsvp');
+  const buttonRsvp = document.getElementById('rsvp2');
   formReservasi.addEventListener("submit", function(e) {
     e.preventDefault();
     const data = new FormData(formReservasi);
@@ -203,6 +204,7 @@ window.addEventListener("load", function() {
     })
     .then(() => {
       sectionRsvp.style.display = 'none';
+      buttonRsvp.style.display = 'none';
       showToast("Konfirmasi berhasil terkirim.");
     })
   });
