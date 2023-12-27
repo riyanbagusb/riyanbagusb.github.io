@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitri & Bagus Wedding</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/invitation/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+      href="/invitation/bootstrap-icons/font/bootstrap-icons.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,6 +18,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script type="module" src="firebase.js"></script>
   </head>
   <body class="text-center">
     <audio id="audioPlayer" autoplay loop>
@@ -32,11 +28,16 @@
 
     <section
       id="invitation"
-      class="container vh-100 d-flex flex-column justify-content-center align-items-lg-center"
+      class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
       <div class="my-auto z-1">
-        <img src = "bird.svg" alt="Bird Vector Image" height="100px" class="mb-2"/>
+        <img
+          src="bird.svg"
+          alt="Bird Vector Image"
+          height="100px"
+          class="mb-2"
+        />
         <div class="mb-2">Wedding Invitation</div>
         <h1 class="wedding-font font-size-3 mb-2">
           Fitri <span class="font-size-2">&</span> Bagus
@@ -66,7 +67,7 @@
 
     <section
       id="home"
-      class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 border"
+      class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
       <div>The Wedding of</div>
@@ -80,7 +81,7 @@
 
     <section
       id="info"
-      class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 border"
+      class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
       <div class="mb-3 fw-bold wedding-font h5">Assalamu'alaikum Wr. Wb.</div>
@@ -108,13 +109,13 @@
 
     <section
       id="date"
-      class="container d-flex flex-column justify-content-center align-items-center my-3 border"
+      class="container d-flex flex-column justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
       <div class="wedding-font h1 mb-0">Waktu & Tempat</div>
-      <div class="wedding-font h3">Pernikahan</div>
+      <div class="wedding-font h2 mb-0">Pernikahan</div>
       <div
-        class="mt-4 mx-3 rounded-4 d-flex justify-content-around align-items-center"
+        class="w-100 mt-4 d-flex flex-row justify-content-between align-items-center justify-content-md-center gap-md-5"
       >
         <div
           class="shadow-sm rounded-4 d-flex flex-column justify-content-center align-items-center"
@@ -145,37 +146,74 @@
           <div class="">Detik</div>
         </div>
       </div>
-      <div class="shadow-sm px-3 py-2 mt-4 mx-3 rounded-4">
-        <div class="wedding-font h4">Akad Nikah</div>
-        <div>
-          <div>Sabtu, 27 April 2024</div>
-          <div><i class="bi bi-clock me-1"></i> 09.00 WIB</div>
-          <div>Ponyo Sumedang</div>
-          <div>Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang</div>
+
+      <div
+        class="w-100 d-flex flex-column flex-md-row gap-md-3 justify-content-around align-items-center mt-4"
+      >
+        <div class="card rounded-4 w-100 p-3 mt-2 mb-3">
+          <div class="wedding-font h3">Akad Nikah</div>
+          <table class="table table-borderless table-hover text-start">
+            <tbody>
+              <tr>
+                <td><i class="bi bi-calendar-event"></i></td>
+                <td>Sabtu, 27 April 2024</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-clock"></i></td>
+                <td>09.00 WIB s.d. 10.00 WIB</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-geo-alt"></i></td>
+                <td>Ponyo Sumedang</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-building"></i></td>
+                <td>
+                  Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div class="d-block">
             <a
               href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240427T020000Z%2F20240427T070000Z&details=&location=Ponyo%20Sumedang&text=Fitri%20%26%20Bagus%20Wedding"
               target="_blank"
-              class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
+              class="btn btn-sm btn-outline-dark rounded-5"
               tabindex="-1"
               role="button"
               ><i class="bi bi-calendar2-heart-fill me-2"></i>Ingatkan Saya</a
             >
           </div>
         </div>
-      </div>
-      <div class="shadow-sm px-3 py-2 mt-4 mx-3 rounded-4">
-        <div class="wedding-font h4">Resepsi</div>
-        <div>
-          <div>Sabtu, 27 April 2024</div>
-          <div><i class="bi bi-clock me-1"></i> 10.00 WIB s.d. 14.00 WIB</div>
-          <div>Ponyo Sumedang</div>
-          <div>Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang</div>
+        <div class="card rounded-4 w-100 p-3 mt-2 mb-3">
+          <div class="wedding-font h2">Resepsi</div>
+          <table class="table table-borderless table-hover text-start">
+            <tbody>
+              <tr>
+                <td><i class="bi bi-calendar-event"></i></td>
+                <td>Sabtu, 27 April 2024</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-clock"></i></td>
+                <td>10.00 WIB s.d. 14.00 WIB</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-geo-alt"></i></td>
+                <td>Ponyo Sumedang</td>
+              </tr>
+              <tr>
+                <td><i class="bi bi-building"></i></td>
+                <td>
+                  Jl. Raya Bandung-Sumedang KM 38 Sumedang Selatan, Sumedang
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div class="d-block">
             <a
               href="https://maps.app.goo.gl/CC9n7bCjRSg7oQbe7"
               target="_blank"
-              class="btn btn-sm btn-outline-dark mt-3 mb-2 rounded-5"
+              class="btn btn-sm btn-outline-dark rounded-5"
               tabindex="-1"
               role="button"
               ><i class="bi bi-geo-fill me-2"></i>Lihat Lokasi</a
@@ -185,18 +223,11 @@
       </div>
     </section>
 
-    <!-- <section id="gallery" class="vh-100 bg-body-secondary"></section>
-      <section id="rsvp" class="vh-100 bg-dark"></section> -->
-
-    <section
-      id="rsvp"
-      class="container d-flex flex-column justify-content-center align-items-center my-3 border"
-      style="max-width: 768px"
-    >
-      <div class="wedding-font h1 mb-lg-3">Konfirmasi Kehadiran</div>
+    <section id="rsvp" class="container my-3 py-3" style="max-width: 768px">
+      <div class="wedding-font h1 mb-3">Konfirmasi Kehadiran</div>
       <div class="card rounded-4 w-100">
         <div class="card-body">
-          <div>Silahkan Konfirmasi Kehadiran Anda</div>
+          <div>Silakan Konfirmasi Kehadiran Anda</div>
           <form
             method="POST"
             action="https://script.google.com/macros/s/AKfycbw-9tLfJafeq44PFmcIhEyqVnfavMcW2DeZFNjDYLAhYghSSXVJqkS3l3A-HjIcl0mL/exec"
@@ -210,6 +241,7 @@
                   class="form-control form-control-sm rounded-pill"
                   id="nama"
                   name="Nama"
+                  required
                 />
               </div>
             </div>
@@ -226,6 +258,7 @@
                   max="5"
                   value="1"
                   name="Jumlah"
+                  required
                 />
               </div>
             </div>
@@ -239,11 +272,12 @@
                   aria-label="Konfirmasi"
                   id="konfirmasi"
                   name="Konfirmasi"
+                  required
                 >
-                  <option selected value="Hadir">Saya Akan Datang</option>
-                  <option value="Ragu">Saya Masih Ragu</option>
+                  <option value="Hadir">Saya akan datang</option>
+                  <option value="Ragu">Saya masih ragu</option>
                   <option value="Tidak Hadir">
-                    Maaf, Saya Tidak Bisa Hadir
+                    Maaf, Saya tidak bisa hadir
                   </option>
                 </select>
               </div>
@@ -258,12 +292,12 @@
 
     <section
       id="gift"
-      class="container d-flex justify-content-center align-items-center my-3 border"
+      class="container d-flex justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
       <div class="card rounded-4 w-100">
         <div class="card-body">
-          <div class="wedding-font h3">Wedding Gift</div>
+          <div class="wedding-font h1">Wedding Gift</div>
           <div>
             Mungkin karena jarak, waktu dan keadaan yang menghalangi anda untuk
             turut hadir dalam acara pernikahan kami, kami sediakan fitur
@@ -284,14 +318,14 @@
     </section>
 
     <section
-      id="rsvp"
-      class="container d-flex flex-column justify-content-center align-items-center my-3 border"
+      id="ucapan"
+      class="container d-flex flex-column justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
-      <div class="wedding-font h1 mb-lg-3">Ucapan & Doa</div>
+      <div class="wedding-font h1 mb-3">Ucapan & Doa</div>
       <div class="card rounded-4 w-100">
         <div class="card-body">
-          <form method="POST" id="formUcapan">
+          <form method="POST" id="formUcapan" class="mb-4">
             <div class="row text-start mb-3">
               <label for="namaPengirim" class="col-sm-2 col-form-label"
                 >Nama:</label
@@ -301,36 +335,125 @@
                   type="text"
                   class="form-control form-control-sm rounded-pill"
                   id="namaPengirim"
-                  name="namaPengirim"
+                  name="nama"
+                  minlength="3"
+                  required
                 />
               </div>
             </div>
-            <div class="row text-start mb-3">
-              <label for="ucapan" class="col-sm-2 col-form-label"
-                >Ucapan:</label
-              >
+            <div class="row text-start">
+              <label for="pesan" class="col-sm-2 col-form-label">Pesan:</label>
               <div class="col-sm-10">
                 <textarea
                   class="form-control form-control-sm rounded-4"
-                  id="ucapan"
-                  name="Ucapan"
+                  id="pesan"
+                  name="pesan"
                   rows="3"
+                  minlength="10"
+                  required
                 ></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-sm btn-outline-dark rounded-5">
-              <i class="bi bi-postcard-heart-fill me-2"></i>Kirim Ucapan
+            <button
+              type="submit"
+              class="btn btn-sm btn-outline-dark rounded-5 mt-3"
+            >
+              <i class="bi bi-postcard-heart-fill me-2"></i>Kirim Ucapan & Doa
             </button>
           </form>
-          <!-- <button
-            class="btn btn-sm btn-outline-dark rounded-5"
-            onclick="addData()"
-          >
-            POST Data
-          </button> -->
+          <div class="w-100">
+            <div
+              id="ucapanList"
+              class="overflow-auto p-2 d-flex flex-column gap-3"
+              style="max-height: 300px"
+            ></div>
+          </div>
         </div>
       </div>
     </section>
+
+    <section
+      class="container d-flex justify-content-center align-items-center mt-3 mb-4 py-3"
+      style="max-width: 768px"
+    >
+      <div class="my-3">
+        <div class="mb-3">
+          Atas kehadiran dan do'a restu dari Bapak/Ibu/Saudara/i sekalian, kami
+          mengucapkan terima kasih.
+        </div>
+        <div class="mb-4 fw-bold wedding-font h5">
+          Wassalamu'alaikum Wr. Wb.
+        </div>
+        <div class="mb-1">Kami yang berbahagia</div>
+        <div class="wedding-font font-size-3">Fitri & Bagus</div>
+        <div class="fw-bold">Beserta Keluarga Besar</div>
+        <div class="mt-4">Made with 💙</div>
+        <div>© 2024 | Fitri & Bagus</div>
+      </div>
+    </section>
+
+    <section class="fixed-bottom d-flex flex-column justify-content-center">
+      <nav id="navigation" class="navbar bg-light shadow" style="display: none">
+        <div
+          class="container h2 d-flex justify-content-around justify-content-lg-between align-items-center"
+          style="max-width: 768px"
+        >
+          <div>
+            <a class="nav-link" href="#home">
+              <i class="bi bi-house-heart"></i>
+            </a>
+          </div>
+          <div>
+            <a class="nav-link" href="#info">
+              <i class="bi bi-arrow-through-heart"></i>
+            </a>
+          </div>
+          <div>
+            <a class="nav-link" href="#date">
+              <i class="bi bi-calendar2-heart"></i>
+            </a>
+          </div>
+          <div>
+            <a class="nav-link" href="#rsvp">
+              <i class="bi bi-journal-bookmark-fill"></i>
+            </a>
+          </div>
+          <div>
+            <a class="nav-link" href="#gift">
+              <i class="bi bi-gift"></i>
+            </a>
+          </div>
+          <div>
+            <a class="nav-link" href="#ucapan">
+              <i class="bi bi-postcard-heart"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <div class="position-fixed top-0 end-0">
+      <button class="btn btn-lg border-0" onclick="toggleFullscreen()">
+        <i class="bi bi-arrows-fullscreen" id="fullscreenButton"></i>
+      </button>
+    </div>
+
+    <div class="position-fixed d-flex flex-column bottom-0 end-0 pb-2 mb-5">
+      <button class="btn btn-lg py-0 border-0" onclick="toggleMusic()">
+        <i
+          id="musicButton"
+          class="bi bi-pause-circle"
+          style="display: none"
+        ></i>
+      </button>
+      <button class="btn btn-lg border-0" onclick="scrollToTop()">
+        <i
+          class="bi bi-arrow-up-circle"
+          id="backToTopBtn"
+          style="display: none"
+        ></i>
+      </button>
+    </div>
 
     <div
       class="offcanvas offcanvas-start"
@@ -359,7 +482,7 @@
           <div class="small sans-font">a.n Fitri Nurulafiah</div>
           <button
             type="button"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
             onclick="copyText('rekBCA')"
           >
             <i class="bi bi-copy me-2"></i>Salin No. Rekening
@@ -371,7 +494,7 @@
           <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
           <button
             type="button"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
             onclick="copyText('rekMandiri')"
           >
             <i class="bi bi-copy me-2"></i>Salin No. Rekening
@@ -387,7 +510,7 @@
           <div class="small sans-font">a.n Bagus Budhi Riyanto</div>
           <button
             type="button"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
             onclick="copyText('ewallet')"
           >
             <i class="bi bi-copy me-2"></i>Salin E-Wallet
@@ -398,7 +521,7 @@
           <div class="sans-font small">Seluruh Metode Pembayaran</div>
           <button
             type="button"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
           >
             <i class="bi bi-qr-code-scan me-2"></i>Generate QRIS
           </button>
@@ -411,7 +534,7 @@
           </div>
           <button
             type="button"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
             onclick="copyText('alamatGift')"
           >
             <i class="bi bi-copy me-2"></i>Salin Alamat
@@ -419,7 +542,7 @@
           <a
             href="https://maps.app.goo.gl/pHryxKfdSBu3ir5k9"
             target="_blank"
-            class="btn btn-sm btn-light px-3 rounded-5 mt-2"
+            class="btn btn-sm btn-outline-dark px-3 rounded-5 mt-2"
             role="button"
           >
             <i class="bi bi-pin-map-fill me-2"></i>Lihat Lokasi
@@ -428,126 +551,27 @@
       </div>
     </div>
 
-    <section
-      class="container d-flex justify-content-center align-items-center mt-3 mb-5 border"
-      style="max-width: 768px"
-    >
-      <div class="my-3">
-        <div class="mb-3">
-          Atas kehadiran dan do'a restu dari Bapak/Ibu/Saudara/i sekalian, kami
-          mengucapkan terima kasih.
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header text-bg-dark">
+          <strong class="me-auto">Success</strong>
+          <small>just now</small>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
         </div>
-        <div class="mb-4 fw-bold wedding-font h5">
-          Wassalamu'alaikum Wr. Wb.
-        </div>
-        <div class="mb-1">Kami yang berbahagia</div>
-        <div class="wedding-font font-size-3">Fitri & Bagus</div>
-        <div class="fw-bold">Beserta Keluarga Besar</div>
-        <div class="mt-4">Made with ❤️</div>
-        <div>© 2024 | Fitri & Bagus</div>
+        <div class="toast-body" id="toastText"></div>
       </div>
-    </section>
-
-    <section>
-      <div class="fixed-top d-flex flex-column justify-content-center">
-        <div class="my-2 mx-3 h5 align-self-end">
-          <i
-            class="bi bi-arrows-fullscreen"
-            onclick="toggleFullscreen()"
-            id="fullscreenButton"
-          ></i>
-        </div>
-      <div class="fixed-bottom d-flex flex-column justify-content-center">
-        <div class="mb-1 mx-3 h2 align-self-end">
-          <i
-            id="playButton"
-            class="bi bi-play-circle"
-            onclick="playAudio()"
-            style="display: none"
-          ></i>
-          <i
-            id="pauseButton"
-            class="bi bi-pause-circle"
-            onclick="pauseAudio()"
-            style="display: none"
-          ></i>
-        </div>
-        <div class="mb-3 mx-3 h2 align-self-end">
-          <i
-            class="bi bi-arrow-up-circle"
-            onclick="scrollToTop()"
-            id="backToTopBtn"
-            style="display: none"
-          ></i>
-        </div>
-        <nav
-          id="navigation"
-          class="navbar bg-light shadow"
-          style="display: none"
-        >
-          <div
-            class="container h3 d-flex justify-content-around justify-content-lg-between align-items-center"
-            style="max-width: 768px"
-          >
-            <div>
-              <a class="nav-link" href="#home">
-                <i class="bi bi-house-heart"></i>
-              </a>
-            </div>
-            <div>
-              <a class="nav-link" href="#info">
-                <i class="bi bi-arrow-through-heart"></i>
-              </a>
-            </div>
-            <div>
-              <a class="nav-link" href="#date">
-                <i class="bi bi-calendar2-heart"></i>
-              </a>
-            </div>
-            <div>
-              <a class="nav-link" href="#rsvp">
-                <i class="bi bi-journal-bookmark-fill"></i>
-              </a>
-            </div>
-            <div>
-              <a class="nav-link" href="#gift">
-                <i class="bi bi-gift"></i>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module">
-      // // Import the functions you need from the SDKs you need
-      // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-      // // TODO: Add SDKs for Firebase products that you want to use
-      // // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // // Your web app's Firebase configuration
-      // // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      // const firebaseConfig = {
-      //   apiKey: "AIzaSyAxL0iT9ndbU0sP6c5VMa-WcgC3ZzMOxkQ",
-      //   authDomain: "fnb-wedding.firebaseapp.com",
-      //   databaseURL:
-      //     "https://fnb-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
-      //   projectId: "fnb-wedding",
-      //   storageBucket: "fnb-wedding.appspot.com",
-      //   messagingSenderId: "785627773860",
-      //   appId: "1:785627773860:web:dd0e6648d92bf50ef85f31",
-      //   measurementId: "G-B169RECVPE",
-      // };
-
-      // // Initialize Firebase
-      // const app = initializeApp(firebaseConfig);
-      // const analytics = getAnalytics(app);
-    </script>
+    </div>
+    <script src="/invitation/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

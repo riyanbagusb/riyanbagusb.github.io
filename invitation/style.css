@@ -137,7 +137,11 @@ body {
 .img-box {
   max-width: 120px;
   max-height: 120px;
-  /* background-color: #b0daff; */
   margin: auto;
   overflow: hidden;
+}
+
+.img-box-ucapan {
+  max-width: 40px;
+  max-height: 40px;
 }

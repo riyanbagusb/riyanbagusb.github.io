@@ -1,3 +1,102 @@
+// TOAST
+const toastLive = document.getElementById('liveToast');
+const toastText = document.getElementById('toastText');
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLive);
+
+function showToast(message) {
+  toastText.innerHTML = message;
+  toastBootstrap.show();
+}
+
+// FULLSCREEN WEBSITE
+const fullscreenButton = document.getElementById('fullscreenButton');
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+    fullscreenButton.classList.add('bi-fullscreen-exit');
+    fullscreenButton.classList.remove('bi-arrows-fullscreen');
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+    fullscreenButton.classList.add('bi-arrows-fullscreen');
+    fullscreenButton.classList.remove('bi-fullscreen-exit');
+  }
+}
+
+// SCROLL TO TOP
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// PLAY AUDIO
+const audio = document.getElementById('audioPlayer');
+const musicButton =document.getElementById('musicButton');
+
+function toggleMusic() {
+  if(audio.paused){
+    audio.play();
+    musicButton.classList.add('bi-pause-circle');
+    musicButton.classList.remove('bi-play-circle');
+  } else {
+    audio.pause();
+    musicButton.classList.add('bi-play-circle');
+    musicButton.classList.remove('bi-pause-circle');
+  }
+}
+
+function playMusic() {
+  audio.play();
+  musicButton.classList.add('bi-pause-circle');
+  musicButton.classList.remove('bi-play-circle');
+  musicButton.style.display = 'inline-block';
+}
+
+// DISABLE SCROLL
+const rootElement = document.querySelector(":root");
+
+function disableScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  window.onscroll = function () {
+    window.scrollTo(scrollTop, scrollLeft);
+  }
+  rootElement.style.scrollBehavior = 'auto';
+}
+
+function enableScroll() {
+  window.onscroll = function () { }
+  rootElement.style.scrollBehavior = 'smooth';
+  document.getElementById('navigation').style.display = 'inline-block';
+  document.getElementById('backToTopBtn').style.display = 'inline-block';
+  playMusic();
+}
+
+disableScroll();
+
+// COUNTDOWN
+const tanggalTarget = '2024-04-27T09:00:00';
+// const tanggalTarget = '2023-12-27T18:00:00';
+
 function hitungMundur(tanggalTarget) {
     const sekarang = new Date().getTime();
     const target = new Date(tanggalTarget).getTime();
@@ -29,7 +128,7 @@ function hitungMundur(tanggalTarget) {
     };
 }
 
-function perbaruiHitungMundur(tanggalTarget) {
+function updateHitungMundur(tanggalTarget) {
   const waktu = hitungMundur(tanggalTarget);
 
   document.getElementById('hari').innerText = waktu.hari;
@@ -38,65 +137,11 @@ function perbaruiHitungMundur(tanggalTarget) {
   document.getElementById('detik').innerText = waktu.detik;
 }
 
-// Contoh penggunaan:
-const tanggalTarget = '2024-04-27T09:00:00'; // Atur tanggal target di sini (format: 'YYYY-MM-DDTHH:mm:ss')
-
-// Memperbarui setiap detik
 setInterval(function() {
-  perbaruiHitungMundur(tanggalTarget);
+  updateHitungMundur(tanggalTarget);
 }, 1000);
 
-// Memperbarui untuk pertama kali saat halaman dimuat
-perbaruiHitungMundur(tanggalTarget);
-
-// SCROLL TO TOP
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth' // Efek smooth scrolling
-  });
-}
-
-// PLAY AUDIO
-const audio = document.getElementById('audioPlayer');
-const playButton = document.getElementById('playButton');
-const pauseButton = document.getElementById('pauseButton');
-
-function playAudio() {
-  audio.play();
-  playButton.style.display = 'none';
-  pauseButton.style.display = 'inline-block';
-
-}
-
-function pauseAudio() {
-  audio.pause();
-  playButton.style.display = 'inline-block';
-  pauseButton.style.display = 'none';
-}
-
-// DISABLE SCROLL
-const rootElement = document.querySelector(":root");
-
-function disableScroll() {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-  window.onscroll = function () {
-    window.scrollTo(scrollTop, scrollLeft);
-  }
-  rootElement.style.scrollBehavior = 'auto';
-}
-
-function enableScroll() {
-  window.onscroll = function () { }
-  rootElement.style.scrollBehavior = 'smooth';
-  document.getElementById('navigation').style.display = 'inline-block';
-  document.getElementById('backToTopBtn').style.display = 'inline-block';
-  playAudio();
-}
-
-disableScroll();
+updateHitungMundur(tanggalTarget);
 
 //URL PARAMETER
 const urlParams = new URLSearchParams(window.location.search);
@@ -144,70 +189,21 @@ function copyText(id) {
   }
 }
 
-// DISABLE FORM RESPONSE
+// FORM KONFIRMASI KEHADIRAN
 window.addEventListener("load", function() {
-  const form = document.getElementById('formReservasi');
-  form.addEventListener("submit", function(e) {
+  const formReservasi = document.getElementById('formReservasi');
+  const sectionRsvp = document.getElementById('rsvp');
+  formReservasi.addEventListener("submit", function(e) {
     e.preventDefault();
-    const data = new FormData(form);
+    const data = new FormData(formReservasi);
     const action = e.target.action;
     fetch(action, {
       method: 'POST',
       body: data,
     })
     .then(() => {
-      alert("Konfirmasi berhasil terkirim.");
+      sectionRsvp.style.display = 'none';
+      showToast("Konfirmasi berhasil terkirim.");
     })
   });
 });
-
-// FULLSCREEN WEBSITE
-const buttonFullscreen = document.getElementById('fullscreenButton');
-function toggleFullscreen() {
-  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-    // Masuk ke mode fullscreen
-    buttonFullscreen.classList.add('bi-fullscreen-exit');
-    buttonFullscreen.classList.remove('bi-arrows-fullscreen');
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) {
-      document.documentElement.msRequestFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-      document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-  } else {
-    // Keluar dari mode fullscreen
-    buttonFullscreen.classList.add('bi-arrows-fullscreen');
-    buttonFullscreen.classList.remove('bi-fullscreen-exit');
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-  }
-}
-
-// const database = firebase.database();
-
-function addData() {
-  const newData = {
-    nama: "Contoh Nama",
-    pesan: "Contoh Pesan"
-  };
-
-  database.ref('/data').push(newData)
-    .then(() => {
-      console.log('Data berhasil ditambahkan ke Firebase');
-      alert('Data berhasil ditambahkan ke Firebase');
-    })
-    .catch(error => {
-      console.error('Gagal menambahkan data:', error);
-      alert('Gagal menambahkan data.');
-    });
-}
