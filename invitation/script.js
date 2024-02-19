@@ -95,7 +95,6 @@ disableScroll();
 
 // COUNTDOWN
 const tanggalTarget = '2024-04-27T09:00:00';
-// const tanggalTarget = '2023-12-27T18:00:00';
 
 function hitungMundur(tanggalTarget) {
     const sekarang = new Date().getTime();

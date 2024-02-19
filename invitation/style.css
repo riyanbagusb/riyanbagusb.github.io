@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "fnb";
+  src: url(/invitation/Graditen.otf) format("opentype");
+}
+
 body {
   font-family: "Jost", serif;
 }
@@ -41,7 +46,7 @@ body {
 }
 
 .wedding-font {
-  font-family: "Great Vibes", cursive;
+  font-family: "fnb", cursive;
 }
 
 .sans-font {
