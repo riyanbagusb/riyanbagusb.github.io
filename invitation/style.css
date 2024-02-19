@@ -10,11 +10,14 @@ body {
 .fnb:before {
   content: "";
   position: absolute;
-  height: 100%;
   overflow: hidden;
-  opacity: 0.3;
-  background: url(/invitation/assets/bg.jpg) no-repeat center center;
-  background-size: contain;
+  background: url(/invitation/bg.jpg) no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .bg-fnb {
