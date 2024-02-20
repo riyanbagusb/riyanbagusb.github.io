@@ -16,11 +16,22 @@
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Great+Vibes&family=Lora:wght@400;500;600;700&family=Jost:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/invitation/photoswipe/photoswipe.css" />
     <link rel="stylesheet" href="style.css" />
     <script
       src="/invitation/bootstrap/js/bootstrap.bundle.min.js"
       defer
     ></script>
+    <script type="module">
+      import PhotoSwipeLightbox from "/invitation/photoswipe/photoswipe-lightbox.esm.js";
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: "#my-gallery",
+        children: "a",
+        showHideAnimationType: "zoom",
+        pswpModule: () => import("/invitation/photoswipe/photoswipe.esm.js"),
+      });
+      lightbox.init();
+    </script>
     <script src="script.js" defer></script>
     <script type="module" src="firebase.js"></script>
   </head>
@@ -399,6 +410,125 @@
               class="overflow-auto p-2 d-flex flex-column gap-3"
               style="max-height: 300px"
             ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="gallery"
+      class="container d-flex justify-content-center align-items-center my-3 py-3"
+      style="max-width: 768px"
+    >
+      <div class="card rounded-4 border-0 w-100">
+        <div class="wedding-font h1">Galeri</div>
+        <div class="d-flex flex-row rounded-4 overflow-hidden" id="my-gallery">
+          <div class="d-flex flex-column">
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+          </div>
+
+          <div class="d-flex flex-column">
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
+          </div>
+
+          <div class="d-flex flex-column">
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+          </div>
+
+          <div class="d-flex flex-column">
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+            </a>
+            <a
+              href="/invitation/bg2.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+            </a>
           </div>
         </div>
       </div>
