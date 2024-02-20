@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitri & Bagus Wedding</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta
+      property="og:image"
+      content="https://bagusbr.com/invitation/cover.jpg"
+    />
+
     <link rel="stylesheet" href="/invitation/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -24,11 +29,27 @@
     ></script>
     <script type="module">
       import PhotoSwipeLightbox from "/invitation/photoswipe/photoswipe-lightbox.esm.js";
+
+      const backEasing = {
+        in: "cubic-bezier(0.6, -0.28, 0.7, 1)",
+        out: "cubic-bezier(0.3, 0, 0.32, 1.275)",
+        inOut: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      };
+
       const lightbox = new PhotoSwipeLightbox({
         gallery: "#my-gallery",
         children: "a",
         showHideAnimationType: "zoom",
         pswpModule: () => import("/invitation/photoswipe/photoswipe.esm.js"),
+      });
+      lightbox.on("firstUpdate", () => {
+        lightbox.pswp.options.easing = backEasing.out;
+      });
+      lightbox.on("initialZoomInEnd", () => {
+        lightbox.pswp.options.easing = backEasing.inOut;
+      });
+      lightbox.on("close", () => {
+        lightbox.pswp.options.easing = backEasing.in;
       });
       lightbox.init();
     </script>
@@ -102,12 +123,23 @@
       class="container vh-100 d-flex flex-column justify-content-center align-items-center my-3 py-3 info"
       style="max-width: 768px"
     >
-      <div class="mb-3 fw-bold wedding-font h5">Assalamu'alaikum Wr. Wb.</div>
-      <div class="mb-4">
+      <div class="mb-3 fw-bold wedding-font">Assalamu'alaikum Wr. Wb.</div>
+      <!-- <div class="mb-4">
         Dengan rahmat dan ridho Allah SWT, insyaAllah kami akan menyelenggarakan
         acara pernikahan:
+      </div> -->
+      <div class="mb-4">
+        بسم الله الرحمن الرحيم
+        <br />
+        <br />
+        "Among His signs is that He created for you mates from among yourselves,
+        in order to have tranquility with them and He put love and mercy between
+        your (hearts) verily in that are signs for those who reflect." Ar-Rum
+        [30:21]
       </div>
-      <div class="mb-3">The Wedding of</div>
+      <div class="mb-3">
+        We kindly request your presence and your Duas at the Nikah of:
+      </div>
       <div>
         <div class="img-box shadow rounded-circle mb-3">
           <img src="Fitri.jpg" class="w-100" alt="..." />
@@ -313,16 +345,24 @@
 
     <section
       id="gift"
-      class="container d-flex justify-content-center align-items-center my-3 py-3"
+      class="container d-flex justify-content-center align-items-center my-3 py-3 gift"
       style="max-width: 768px"
     >
       <div class="card rounded-4 w-100">
         <div class="card-body">
           <div class="wedding-font h1">Wedding Gift</div>
-          <div>
+          <!-- <div>
             Mungkin karena jarak, waktu dan keadaan yang menghalangi anda untuk
             turut hadir dalam acara pernikahan kami, kami sediakan fitur
             berikut:
+          </div> -->
+          <div>
+            We don't expect any gifts. The most important thing to us that you
+            are able to join us and celebrate our special day.
+            <br />
+            <br />
+            If you do insist on giving a gift we will gratefully accept a small
+            contribution towards our new journey.
           </div>
           <div class="d-block">
             <a
@@ -420,136 +460,251 @@
       class="container d-flex justify-content-center align-items-center my-3 py-3"
       style="max-width: 768px"
     >
-      <div class="card rounded-4 border-0 w-100">
+      <div class="card bg-transparent rounded-4 border-0 w-100">
         <div class="wedding-font h1">Galeri</div>
         <div class="d-flex flex-row rounded-4 overflow-hidden" id="my-gallery">
           <div class="d-flex flex-column">
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-05786.jpg"
               target="_blank"
               data-pswp-width="1920"
               data-pswp-height="1280"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-05786.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-05832.jpg"
               target="_blank"
               data-pswp-width="1920"
               data-pswp-height="1280"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-05832.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-06056.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06056.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
+            </a>
+            <a
+              href="/invitation/gallery/JDW-06418.jpg"
+              target="_blank"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
+            >
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06418.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
           </div>
 
           <div class="d-flex flex-column">
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-05848.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-05848.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-05891.jpg"
               target="_blank"
               data-pswp-width="1920"
               data-pswp-height="1280"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-05891.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-05903.jpg"
               target="_blank"
               data-pswp-width="1920"
               data-pswp-height="1280"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-05903.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
+            </a>
+            <a
+              href="/invitation/gallery/JDW-06387.jpg"
+              target="_blank"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
+            >
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06387.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
           </div>
 
           <div class="d-flex flex-column">
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-06279.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06279.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-06196.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06196.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-06205.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06205.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
+            </a>
+            <a
+              href="/invitation/gallery/JDW-06412.jpg"
+              target="_blank"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
+            >
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06412.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
           </div>
 
           <div class="d-flex flex-column">
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-06227.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06227.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg.jpg"
+              href="/invitation/gallery/JDW-06251.jpg"
               target="_blank"
-              data-pswp-width="1920"
-              data-pswp-height="1280"
+              data-pswp-width="1280"
+              data-pswp-height="1920"
             >
-              <img src="/invitation/Bagus.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06251.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
             <a
-              href="/invitation/bg2.jpg"
+              href="/invitation/gallery/JDW-06278.jpg"
               target="_blank"
               data-pswp-width="1920"
               data-pswp-height="1280"
             >
-              <img src="/invitation/Fitri.jpg" alt="" class="img-fluid" />
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06278.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
+            </a>
+            <a
+              href="/invitation/gallery/JDW-06397.jpg"
+              target="_blank"
+              data-pswp-width="1920"
+              data-pswp-height="1280"
+            >
+              <img
+                src="/invitation/gallery/thumbnails/JDW-06397.jpg"
+                alt=""
+                class="img-fluid object-fit-cover"
+                style="aspect-ratio: 1 / 1"
+              />
             </a>
           </div>
+        </div>
+        <div class="mt-4 fst-italic">
+          In the embrace of destiny's gentle hand, we find each other. We warmly
+          invite you to witness our commitment and celebrate with us on our
+          wedding day. See you there!
         </div>
       </div>
     </section>
 
     <section
-      class="container d-flex justify-content-center align-items-center mt-3 mb-5 py-3"
+      class="container d-flex justify-content-center align-items-center mt-3 mb-5 py-3 closing"
       style="max-width: 768px"
     >
       <div class="my-3">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           Atas kehadiran dan do'a restu dari Bapak/Ibu/Saudara/i sekalian, kami
           mengucapkan terima kasih.
-        </div>
-        <div class="mb-4 fw-bold wedding-font h5">
-          Wassalamu'alaikum Wr. Wb.
-        </div>
-        <div class="mb-1">Kami yang berbahagia</div>
+        </div> -->
+        <div class="mb-4 fw-bold wedding-font">Wassalamu'alaikum Wr. Wb.</div>
+        <div class="mb-1">Blessed by love</div>
         <div class="wedding-font font-size-3">Fitri & Bagus</div>
-        <div class="fw-bold">Beserta Keluarga Besar</div>
-        <div class="mt-4">Made with 💙</div>
+        <div class="fw-bold">and our family</div>
+        <div class="mt-4">Made with ♡</div>
         <div>© 2024 | Fitri & Bagus</div>
       </div>
     </section>
